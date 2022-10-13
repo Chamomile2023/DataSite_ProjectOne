@@ -1,0 +1,53 @@
+.header{
+    width: 100%;
+    box-shadow: 0 1px 15px 0 rgb(236, 235, 235);
+    &__nav{
+        display: flex;
+    }
+    &__toggle{
+        margin-right: auto;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+    &__circle{
+        position: absolute;
+        top: 33%;
+        left: 22%;
+        text-align: start !important;
+        &--span{
+            display: block;
+            width: 25px;
+            height: 2px;
+            background-color: rgb(50, 50, 50);
+            border-radius: 15px;
+        }
+        &--span1{
+            display: block;
+            width: 15px;
+            margin: 5px 0;
+            height: 2px;
+            background-color: rgb(50, 50, 50);
+            border-radius: 15px;
+        }
+    }
+    &__logo{
+        margin: auto;
+        text-align: center;
+        &--logo{
+            font-weight: bold;
+            font-size: 50px;
+            line-height: 64px;
+        }
+        &--words{
+            margin-top: -25px;
+            font-size: 20px;
+            color: gray;
+        }
+    }
+    &__buttons{
+        margin-left: auto;
+    }
+}

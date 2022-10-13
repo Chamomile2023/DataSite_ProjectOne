@@ -1,0 +1,18 @@
+.button{
+    background: linear-gradient(to top, #000 50%, #000 50%);
+    background-size: 100% 200%;
+    background-position:  top;
+    &__hero{
+        padding: 10px 25px;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #fff;
+        border: 1px solid black;
+        border-radius: 10px;
+        color: #000;
+    }
+    
+    &:hover{
+        background-position: bottom;
+    }
+}
