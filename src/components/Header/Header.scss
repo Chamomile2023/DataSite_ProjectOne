@@ -3,6 +3,7 @@
     box-shadow: 0 1px 15px 0 rgb(236, 235, 235);
     &__nav{
         display: flex;
+        align-items: center;
     }
     &__toggle{
         margin-right: auto;
@@ -39,15 +40,20 @@
         &--logo{
             font-weight: bold;
             font-size: 50px;
-            line-height: 64px;
         }
         &--words{
-            margin-top: -25px;
             font-size: 20px;
             color: gray;
         }
     }
     &__buttons{
         margin-left: auto;
+        &--register, &--login{
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            border: 1px solid black;
+            font-size: 15px;
+        }
     }
 }

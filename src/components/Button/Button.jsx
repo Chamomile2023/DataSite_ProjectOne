@@ -3,9 +3,8 @@ import './Button.scss'
 
 const Button = () => {
     return <>
-        <div className="button__hero">
-
-            <button className="button">ok</button>
+        <div className="button">
+            <button className="button__basic">ok</button>
         </div>
     </>;
 };

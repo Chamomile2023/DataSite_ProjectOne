@@ -15,12 +15,12 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="header__logo">
-                            <h1 className="header__logo--logo">LYT</h1>
+                            <h2 className="header__logo--logo">LYT</h2>
                             <p className="header__logo--words">Stay with us!</p>
                         </div>
                         <div className="header__buttons">
-                            <div className="header__button--register">Registration</div>
-                            <div className="header__button--login">Log in</div>
+                            <button className="header__buttons--register">Registration</button>
+                            <button className="header__buttons--login">Log in</button>
                         </div>
                     </nav>
                 </div>

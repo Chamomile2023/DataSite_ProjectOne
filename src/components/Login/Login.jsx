@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.scss";
 import { NavLink } from 'react-router-dom'
-import Registration from "../Registration/Registration";
+
 
 const Login = () => {
     return <>

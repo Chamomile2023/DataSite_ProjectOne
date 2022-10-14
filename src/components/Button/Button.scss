@@ -1,18 +1,27 @@
-.button{
-    background: linear-gradient(to top, #000 50%, #000 50%);
-    background-size: 100% 200%;
-    background-position:  top;
-    &__hero{
-        padding: 10px 25px;
-        font-weight: 400;
-        font-size: 16px;
-        background-color: #fff;
-        border: 1px solid black;
-        border-radius: 10px;
-        color: #000;
-    }
-    
-    &:hover{
-        background-position: bottom;
-    }
+// .button{
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     // &__basic{
+//     //     background: linear-gradient(to bottom, black 50%, to top red 50%);
+//     //     background-size: 200% 100%;
+//     //     background-position: top;
+//     // }
+// }
+button{
+    font-size: 20px;
+    font-weight: bold;
+    // margin: 20px;
+    width: 100px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #fff;
+    color: black;
+    transform: all 0.5s ease-out;
+    border-radius: 8px;
+}
+button:hover{
+    background-color: #000;
+    color: #fff;
 }
