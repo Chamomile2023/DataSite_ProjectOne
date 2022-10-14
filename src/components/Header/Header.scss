@@ -1,6 +1,9 @@
 .header{
-    width: 100%;
-    box-shadow: 0 1px 15px 0 rgb(236, 235, 235);
+    max-width: 100%;
+    box-shadow: 0 10px 36px rgb(0 0 0/5%);
+    &__out{
+        
+    }
     &__nav{
         display: flex;
         align-items: center;
@@ -44,6 +47,7 @@
         &--words{
             font-size: 20px;
             color: gray;
+            margin-top: -40px;
         }
     }
     &__buttons{
@@ -63,5 +67,31 @@
                 transition: 0.3s;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        max-width: 1140px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .container{
+        max-width: 960px;
+    }
+}
+ @media screen and (max-width: 768px) {
+     .container{
+         max-width: 720px;
+}
+}
+@media screen and (max-width: 576px) {
+    .container{
+        max-width: 540px;
+    }
+}
+@media screen and (max-width:360px) {
+    .container{
+        max-width: 330px;
     }
 }
