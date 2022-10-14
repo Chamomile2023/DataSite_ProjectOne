@@ -1,0 +1,47 @@
+.login{
+    width: 100%;
+    position: relative;
+    &__hero{
+        width: 400px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        border: 1px solid transparent;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        box-shadow: 0 10px 36px rgb(0 0 0/5%);
+    }
+    &__title{
+        font-weight: bold;
+        font-size: 35px;
+    }
+    &__submit{
+        border: 2px solid black;
+        margin-top: 10px;
+    }
+    &__have{
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+        font-weight: bold;
+    }
+    &__link{
+        color: #0d6efd;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+}
+input{
+    outline: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 13px 23px;
+    margin: 10px 0;
+}
+input::placeholder{
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(149, 148, 148);
+}

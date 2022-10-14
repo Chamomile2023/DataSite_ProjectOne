@@ -1,12 +1,10 @@
 .header{
     max-width: 100%;
     box-shadow: 0 10px 36px rgb(0 0 0/5%);
-    &__out{
-        
-    }
     &__nav{
         display: flex;
         align-items: center;
+        margin-bottom: 50px;
     }
     &__toggle{
         margin-right: auto;
@@ -94,4 +92,16 @@
     .container{
         max-width: 330px;
     }
+}
+.NavLink{
+    color: #fff;
+}
+.NavLink1{
+    color: #000;
+}
+.NavLink:hover{
+    color: #000;
+}
+.NavLink1:hover{
+    color: #fff;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.scss";
+import Button from '../Button/Button'
 import { NavLink } from 'react-router-dom'
 
 
@@ -8,12 +9,14 @@ const Login = () => {
         <div className="login">
             <div className="container">
                 <div className="login__hero">
-                    <h2 className="login__title">Log in</h2>
+                    <h2 className="login__title">Sign in</h2>
                     <input type="text" className="login__email" placeholder="Your email" />
                     <input type="password" className="login__password" placeholder="Your password" />
-                    <button className="login__submit">Submit</button>
-                    <p className="login__query">Dont have account yet? </p>
-                    <NavLink to="/registration" className="login__link">Sign up.</NavLink>
+                    <Button className="login__submit">Submit</Button>
+                    <div className="login__have">
+                        <p className="login__query">Don't have account yet? </p>
+                        <NavLink to="/registration" className="login__link">Sign up.</NavLink>
+                    </div>
                 </div>
             </div>
         </div>

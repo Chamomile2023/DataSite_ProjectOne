@@ -1,10 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import "./App.scss";
 import Registration from "./components/Registration/Registration";
 import Login from "./components/Login/Login";
-import Button from "./components/Button/Button";
+import "./App.scss";
 
 const App = () => {
   return (
