@@ -48,12 +48,20 @@
     }
     &__buttons{
         margin-left: auto;
-        &--register, &--login{
+        &--register{
             padding: 10px 20px;
-            border-radius: 10px;
-            background-color: #fff;
             border: 1px solid black;
+            font-weight: bold;
             font-size: 15px;
+            border-radius: 10px;
+            background-color: #000;
+            color: #fff;
+            margin-right: 10px;
+            &:hover{
+                background-color: #fff;
+                color: #000;
+                transition: 0.3s;
+            }
         }
     }
 }

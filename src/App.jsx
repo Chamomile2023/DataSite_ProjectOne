@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import "./App.scss";
 import Registration from "./components/Registration/Registration";
 import Login from "./components/Login/Login";
+import Button from "./components/Button/Button";
 
 const App = () => {
   return (
