@@ -5,16 +5,20 @@ import Registration from "./components/Registration/Registration";
 import Login from "./components/Login/Login";
 import "./App.scss";
 import SideBar from "./components/SideBar/SideBar";
+import Users from "./components/Users/Users";
+import Unknown from "./components/Unknown/Unknown";
 
 const App = () => {
   return (
     <>
       <Header />
-      <SideBar />
-      {/* <Routes>
+      {/* <SideBar /> */}
+      <Routes>
         <Route path="/registration" element={<Registration />} />
         <Route path="/login" element={<Login />} />
-      </Routes> */}
+        <Route path="/users" element={<Users />} />
+        <Route path="/unknown" element={<Unknown />} />
+      </Routes>
     </>
   );
 };
