@@ -3,8 +3,7 @@ import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
-const Header = () => {
-  const [show, setShow] = useState(false);
+const Header = ({ setShow }) => {
 
   const toggle = () => {
     return setShow((e) => !e);
@@ -17,7 +16,7 @@ const Header = () => {
             <div className="header__hero">
               <nav className="header__nav">
                 <div className="header__toggle" onClick={() => toggle()}>
-                  <div className={`header__circle ${show ? "" : "hide"}`}>
+                  <div className="header__circle">
                     <div className="header__circle--span"></div>
                     <div className="header__circle--span1"></div>
                     <div className="header__circle--span"></div>

@@ -3,13 +3,16 @@ import "./SideBar.scss";
 import { NavLink } from 'react-router-dom'
 import Button from '../Button/Button'
 
-const SideBar = () => {
+const SideBar = ({ show, setClose, close }) => {
+    const closeBtn = () => {
+        return setClose((e) => !e)
+    }
     return <>
-        <div className="sidebar">
-            <div className="sidebar__left">
+        <div className={`sidebar  ${show ? "" : "hide"}`}>
+            <div className={`sidebar__left ${close ? "" : "close"}`}>
                 <div className="sidebar__category">
                     <h2 className="sidebar__category--title">Category</h2>
-                    <Button className="sidebar__category--span">X</Button>
+                    <Button className="sidebar__category--span" onClick={() => closeBtn()}>X</Button>
                 </div>
                 <div className="sidebar__input">
                     <input type="text" className="sidebar__input--input" placeholder="Search" />
