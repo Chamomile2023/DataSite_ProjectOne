@@ -15,11 +15,11 @@ const App = () => {
   return (
     <>
       <Header setShow={setShow} />
-      <SideBar show={show} setClose={setClose} close={close} />
+      {/* <SideBar show={show} setClose={setClose} close={close} /> */}
       <Routes>
-        <Route path="/main" element={<Main />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/sign-up" element={<Registration />} />
         <Route path="/users" element={<Users />} />
         <Route path="/unknown" element={<Unknown />} />
       </Routes>

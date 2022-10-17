@@ -1,0 +1,44 @@
+.main{
+    width: 100%;
+    &__hero{
+    &--title{
+        font-weight: bold;
+        font-size: px;
+    }
+    }
+    &__cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__card{
+        width: 200px;
+        height: 205px;
+        box-shadow: 10px 5px 10px rgb(0 0 0 / 5%);
+        padding: 30px;
+        text-align: center;
+    }
+    &--img{
+        &--img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+    }
+    &__name{
+        font-weight: bold;
+        font-size: 18px;
+    }
+    &__email{
+        &--email{
+            font-size: 16px;
+            color: rgb(100, 98, 98);
+        }
+    }
+    &__btn{
+        border: 1px solid gray;
+        color: gray;
+        font-weight: 400;
+    }
+}
