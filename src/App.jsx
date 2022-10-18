@@ -9,24 +9,33 @@ import Users from "./components/Users/Users";
 import Unknown from "./components/Unknown/Unknown";
 import Main from "./components/Main/Main";
 import Card from "./components/Card/Card";
+import axios from "axios";
 const App = () => {
   //Sidebar
   const [show, setShow] = useState(false);
   const [close, setClose] = useState(false);
   //fetch
   const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   axios.get("https://reqres.in/api/users?page")
+  //     .then(response => {
+  //       console.log(response)
+  //       setData(response.data)
+  //     })
+  //     .catch(err => { console.log(err) })
+  // });
   const getData = async () => {
     const request = await fetch("https://reqres.in/api/users?page");
     const response = await request.json();
-    setData(response);
+    setData(response.data);
   };
   useEffect(() => {
     getData();
-  }, [data]);
+  }, []);
+  console.log(data);
   return (
     <>
       <Header setShow={setShow} />
-      <Card />
       <Routes>
         <Route path="/" element={<Main data={data} />} />
         <Route path="/sign-in" element={<Login />} />
