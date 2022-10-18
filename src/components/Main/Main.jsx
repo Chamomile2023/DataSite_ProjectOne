@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
-import person from "../img/123.jpg";
 import "./Main.scss";
 
 const Main = () => {

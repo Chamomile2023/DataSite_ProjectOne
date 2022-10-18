@@ -1,7 +1,44 @@
 import React from "react";
+import '../Main/Main.scss'
+import Button from "../Button/Button";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Unknown = () => {
-  return <>Unknown</>;
+  const [colorData, setColorData] = useState([]);
+  const ColorData = async () => {
+    const request = await fetch("https://reqres.in/api/unknown")
+    const response = await request.json()
+    setColorData(response)
+  }
+  useEffect(() => {
+    ColorData()
+  }, [])
+  return <>
+    <div className="unknown">
+      <div className="container">
+        <div className="unknown__hero">
+          <div className="unknown__cards">
+            {this.props.colorData.map((color) => {
+              return (
+                <div className="main__card">
+                  <div className="main__img">
+                    <div className={`main--circle ${color.color}`}></div>
+                  </div>
+                  <div className="main__name ">Color: #990223</div>
+                  <div className="main__email">
+                    <p className="main__email--email">Year: 2023</p>
+                    <p className="main__email--email">Pantone value: 17-2031</p>
+                  </div>
+                  <Button className="main__btn">See more</Button>
+                </div>
+              )
+            })
+            }
+          </div>
+        </div>
+      </div>
+    </div></>;
 };
 
 export default Unknown;

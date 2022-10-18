@@ -32,7 +32,6 @@ const App = () => {
   useEffect(() => {
     getData();
   }, []);
-  console.log(data);
   return (
     <>
       <Header setShow={setShow} />
