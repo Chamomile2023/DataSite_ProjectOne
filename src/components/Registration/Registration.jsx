@@ -29,7 +29,7 @@ const Registration = () => {
               <Button className="login__submit">Submit</Button>
               <div className="login__have">
                 <p className="login__query">Have account yet? </p>
-                <NavLink to="/sign-up" className="login__link">
+                <NavLink to="/sign-in" className="login__link">
                   Sign in.
                 </NavLink>
               </div>

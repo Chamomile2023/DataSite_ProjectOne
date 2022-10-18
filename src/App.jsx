@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Registration from "./components/Registration/Registration";
@@ -8,21 +8,33 @@ import SideBar from "./components/SideBar/SideBar";
 import Users from "./components/Users/Users";
 import Unknown from "./components/Unknown/Unknown";
 import Main from "./components/Main/Main";
+import Card from "./components/Card/Card";
 const App = () => {
   //Sidebar
   const [show, setShow] = useState(false);
   const [close, setClose] = useState(false);
+  //fetch
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const request = await fetch("https://reqres.in/api/users?page");
+    const response = await request.json();
+    setData(response);
+  };
+  useEffect(() => {
+    getData();
+  }, [data]);
   return (
     <>
       <Header setShow={setShow} />
-      {/* <SideBar show={show} setClose={setClose} close={close} /> */}
+      <Card />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main data={data} />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Registration />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/unknown" element={<Unknown />} />
+        <Route path="/users" element={<Users data={data} />} />
+        <Route path="/unknown" element={<Unknown data={data} />} />
       </Routes>
+      {/* <SideBar show={show} setClose={setClose} close={close} /> */}
     </>
   );
 };

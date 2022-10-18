@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 const Header = ({ setShow }) => {
-
   const toggle = () => {
     return setShow((e) => !e);
   };
@@ -23,17 +22,20 @@ const Header = ({ setShow }) => {
                   </div>
                 </div>
                 <div className="header__logo">
-                  <h2 className="header__logo--logo">LYT</h2>
-                  <p className="header__logo--words">Stay with us!</p>
+                  <NavLink to="/">
+                    {" "}
+                    <h2 className="header__logo--logo">LYT</h2>
+                    <p className="header__logo--words">Stay with us!</p>
+                  </NavLink>
                 </div>
                 <div className="header__buttons">
                   <button className="header__buttons--register">
-                    <NavLink to="/login" className="NavLink">
+                    <NavLink to="/sign-up" className="NavLink">
                       Registration
                     </NavLink>
                   </button>
                   <Button className="header__buttons--login">
-                    <NavLink to="/registration" className="NavLink1">
+                    <NavLink to="/sign-in" className="NavLink1">
                       Log in
                     </NavLink>
                   </Button>
