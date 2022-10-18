@@ -25,7 +25,9 @@ const Main = () => {
                     Email: george.bluth@reqres.in
                   </p>
                 </div>
-                <Button className="main__btn">See more</Button>
+                <NavLink to="/">
+                  <Button className="main__btn">See more</Button>
+                </NavLink>
               </div>
               <div className="main__card">
                 <div className="main__img">
