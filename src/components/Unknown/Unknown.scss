@@ -1,0 +1,8 @@
+.unknown{
+    width: 100%;
+    &__cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+}

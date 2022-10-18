@@ -10,24 +10,21 @@ import Unknown from "./components/Unknown/Unknown";
 import Main from "./components/Main/Main";
 import Card from "./components/Card/Card";
 import axios from "axios";
+import Loading from "./components/Loading/Loading";
 const App = () => {
+  //Loader
+  const [loading, setLoading] = useState(false);
   //Sidebar
   const [show, setShow] = useState(false);
   const [close, setClose] = useState(false);
   //fetch
   const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   axios.get("https://reqres.in/api/users?page")
-  //     .then(response => {
-  //       console.log(response)
-  //       setData(response.data)
-  //     })
-  //     .catch(err => { console.log(err) })
-  // });
   const getData = async () => {
+    setLoading(false);
     const request = await fetch("https://reqres.in/api/users?page");
     const response = await request.json();
     setData(response.data);
+    setLoading(true);
   };
   useEffect(() => {
     getData();
@@ -35,10 +32,17 @@ const App = () => {
   return (
     <>
       <Header setShow={setShow} />
+      <Loading />
       <Routes>
-        <Route path="/" element={<Main data={data} />} />
-        <Route path="/sign-in" element={<Login />} />
-        <Route path="/sign-up" element={<Registration />} />
+        <Route
+          path="/"
+          element={loading ? <Main data={data} /> : <Loading />}
+        />
+        <Route path="/sign-in" element={loading ? <Login /> : <Loading />} />
+        <Route
+          path="/sign-up"
+          element={loading ? <Registration /> : <Loading />}
+        />
         <Route path="/users" element={<Users data={data} />} />
         <Route path="/unknown" element={<Unknown data={data} />} />
       </Routes>
