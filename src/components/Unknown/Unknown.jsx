@@ -38,7 +38,7 @@ const Unknown = () => {
                         Pantone value: {color.pantone_value}
                       </p>
                     </div>
-                    <NavLink to={color.id}>
+                    <NavLink to={`/unknown/${color.id}`}>
                       <Button className="main__btn">See more</Button>
                     </NavLink>
                   </div>

@@ -11,20 +11,7 @@ import Loading from "./components/Loading/Loading";
 import RealSidebar from "./components/RealSidebar/RealSidebar";
 import SingleCard from "./components/SingleCard/SingleCard";
 import SingleColorCard from "./components/SingleCard/SingleColorCard";
-import { useParams } from "react-router-dom";
 const App = () => {
-  //Params
-  const id = useParams();
-  const [newColorData, setNewColorData] = useState([]);
-  const ColorData = async () => {
-    const request = await fetch(`https://reqres.in/api/unknown/${id}`);
-    const response = await request.json();
-    setNewColorData(response.data);
-  };
-  console.log(newColorData);
-  useEffect(() => {
-    ColorData();
-  }, []);
   //Loader
   const [loading, setLoading] = useState(false);
   //Sidebar
@@ -65,12 +52,12 @@ const App = () => {
           element={loading ? <Unknown data={data} /> : <Loading />}
         />
         <Route
-          path="/users/ :id"
+          path="/users/:id"
           element={loading ? <SingleCard data={data} /> : <Loading />}
         />
         <Route
           path="/unknown/:id"
-          element={loading ? <SingleColorCard /> : <Loading />}
+          element={loading ? <SingleColorCard data={data} /> : <Loading />}
         />
       </Routes>
     </>
