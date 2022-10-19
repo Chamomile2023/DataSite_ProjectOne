@@ -4,16 +4,27 @@ import Header from "./components/Header/Header";
 import Registration from "./components/Registration/Registration";
 import Login from "./components/Login/Login";
 import "./App.scss";
-import SideBar from "./components/SideBar/SideBar";
 import Users from "./components/Users/Users";
 import Unknown from "./components/Unknown/Unknown";
 import Main from "./components/Main/Main";
-import Card from "./components/Card/Card";
-import axios from "axios";
 import Loading from "./components/Loading/Loading";
 import RealSidebar from "./components/RealSidebar/RealSidebar";
 import SingleCard from "./components/SingleCard/SingleCard";
+import SingleColorCard from "./components/SingleCard/SingleColorCard";
+import { useParams } from "react-router-dom";
 const App = () => {
+  //Params
+  const id = useParams();
+  const [newColorData, setNewColorData] = useState([]);
+  const ColorData = async () => {
+    const request = await fetch(`https://reqres.in/api/unknown/${id}`);
+    const response = await request.json();
+    setNewColorData(response.data);
+  };
+  console.log(newColorData);
+  useEffect(() => {
+    ColorData();
+  }, []);
   //Loader
   const [loading, setLoading] = useState(false);
   //Sidebar
@@ -23,7 +34,7 @@ const App = () => {
   const [data, setData] = useState([]);
   const getData = async () => {
     setLoading(false);
-    const request = await fetch("https://reqres.in/api/users?page");
+    const request = await fetch(`https://reqres.in/api/users`);
     const response = await request.json();
     setData(response.data);
     setLoading(true);
@@ -54,11 +65,14 @@ const App = () => {
           element={loading ? <Unknown data={data} /> : <Loading />}
         />
         <Route
-          path="/users/:id"
-          element={loading ? <SingleCard /> : <Loading />}
+          path="/users/ :id"
+          element={loading ? <SingleCard data={data} /> : <Loading />}
+        />
+        <Route
+          path="/unknown/:id"
+          element={loading ? <SingleColorCard /> : <Loading />}
         />
       </Routes>
-      {/* <SideBar show={show} setClose={setClose} close={close} /> */}
     </>
   );
 };

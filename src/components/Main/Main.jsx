@@ -1,9 +1,19 @@
 import React from "react";
 import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Main.scss";
 
-const Main = () => {
+const Main = ({ data }) => {
+  const [colorData, setColorData] = useState([]);
+  const ColorData = async () => {
+    const request = await fetch(`https://reqres.in/api/unknown`);
+    const response = await request.json();
+    setColorData(response.data);
+  };
+  useEffect(() => {
+    ColorData();
+  }, []);
   return (
     <>
       <main className="main">
@@ -11,72 +21,28 @@ const Main = () => {
           <div className="main__hero">
             <h1 className="main__hero--title">Top Users:</h1>
             <div className="main__cards">
-              <div className="main__card">
-                <div className="main__img">
-                  <img
-                    src="https://reqres.in/img/faces/1-image.jpg"
-                    alt="person"
-                    className="main__img--img"
-                  />
-                </div>
-                <div className="main__name">George Bluth</div>
-                <div className="main__email">
-                  <p className="main__email--email">
-                    Email: george.bluth@reqres.in
-                  </p>
-                </div>
-                <NavLink to="/">
-                  <Button className="main__btn">See more</Button>
-                </NavLink>
-              </div>
-              <div className="main__card">
-                <div className="main__img">
-                  <img
-                    src="https://reqres.in/img/faces/2-image.jpg"
-                    alt="person"
-                    className="main__img--img"
-                  />
-                </div>
-                <div className="main__name">Janet Weaver</div>
-                <div className="main__email">
-                  <p className="main__email--email">
-                    Email: emma.wong@reqres.in
-                  </p>
-                </div>
-                <Button className="main__btn">See more</Button>
-              </div>
-              <div className="main__card">
-                <div className="main__img">
-                  <img
-                    src="https://reqres.in/img/faces/3-image.jpg"
-                    alt="person"
-                    className="main__img--img"
-                  />
-                </div>
-                <div className="main__name">Emma Wong</div>
-                <div className="main__email">
-                  <p className="main__email--email">
-                    Email: eve.holt@reqres.in
-                  </p>
-                </div>
-                <Button className="main__btn">See more</Button>
-              </div>
-              <div className="main__card">
-                <div className="main__img">
-                  <img
-                    src="https://reqres.in/img/faces/4-image.jpg"
-                    alt="person"
-                    className="main__img--img"
-                  />
-                </div>
-                <div className="main__name">Eve Holt</div>
-                <div className="main__email">
-                  <p className="main__email--email">
-                    Email: emma.wong@reqres.in
-                  </p>
-                </div>
-                <Button className="main__btn">See more</Button>
-              </div>
+              {data.slice(0, 4).map((item) => {
+                return (
+                  <div className="main__card" key={item.id}>
+                    <div className="main__img">
+                      <img
+                        src={item.avatar}
+                        alt="person"
+                        className="main__img--img"
+                      />
+                    </div>
+                    <div className="main__name">{item.first_name + " " + item.last_name}</div>
+                    <div className="main__email">
+                      <p className="main__email--email">
+                        {item.email}
+                      </p>
+                    </div>
+                    <NavLink to={item.id}>
+                      <Button className="main__btn">See more</Button>
+                    </NavLink>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <NavLink to="/users">
@@ -86,50 +52,23 @@ const Main = () => {
             <div className="main__hero">
               <h1 className="main__hero--title">Top Unknown:</h1>
               <div className="main__cards">
-                <div className="main__card">
-                  <div className="main__img">
-                    <div className="main--circle one"></div>
-                  </div>
-                  <div className="main__name ">Color: #990223</div>
-                  <div className="main__email">
-                    <p className="main__email--email">Year: 2023</p>
-                    <p className="main__email--email">Pantone value: 17-2031</p>
-                  </div>
-                  <Button className="main__btn">See more</Button>
-                </div>
-                <div className="main__card">
-                  <div className="main__img">
-                    <div className="main--circle two"></div>
-                  </div>
-                  <div className="main__name">Color: #990223</div>
-                  <div className="main__email">
-                    <p className="main__email--email">Year: 2023</p>
-                    <p className="main__email--email">Pantone value: 17-2031</p>
-                  </div>
-                  <Button className="main__btn">See more</Button>
-                </div>
-                <div className="main__card">
-                  <div className="main__img">
-                    <div className="main--circle three"></div>
-                  </div>
-                  <div className="main__name">Color: #990223</div>
-                  <div className="main__email">
-                    <p className="main__email--email">Year: 2023</p>
-                    <p className="main__email--email">Pantone value: 17-2031</p>
-                  </div>
-                  <Button className="main__btn">See more</Button>
-                </div>
-                <div className="main__card">
-                  <div className="main__img">
-                    <div className="main--circle"></div>
-                  </div>
-                  <div className="main__name">Color: #990223</div>
-                  <div className="main__email">
-                    <p className="main__email--email">Year: 2023</p>
-                    <p className="main__email--email">Pantone value: 17-2031</p>
-                  </div>
-                  <Button className="main__btn">See more</Button>
-                </div>
+                {colorData.slice(0, 4).map((element) => {
+                  return (
+                    <div className="main__card" key={element.id}>
+                      <div className="main__img">
+                        <div className="main--circle" style={{ backgroundColor: element.color }}></div>
+                      </div>
+                      <div className="main__name ">Color: {element.color}</div>
+                      <div className="main__email">
+                        <p className="main__email--email">Year: {element.year}</p>
+                        <p className="main__email--email">Pantone value: {element.pantone_value}</p>
+                      </div>
+                      <NavLink to={element.id}>
+                        <Button className="main__btn">See more</Button>
+                      </NavLink>
+                    </div>
+                  )
+                })}
               </div>
             </div>
             <NavLink to="/unknown">

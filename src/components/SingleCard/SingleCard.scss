@@ -1,0 +1,44 @@
+.single{
+    width: 100%;
+    position: relative;
+    &__cards{
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__card{
+        position: relative;
+        width: 300px;
+        height: 470px;
+        border: 1px solid none;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 10px 5px 10px rgb(0 0 0 / 5%);
+        margin: 30px;
+        &--img{
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+        }
+        &--btn{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        &--title{
+            font-weight: bold;
+            font-size: 40px;
+        }
+        &--email{
+            color: gray;
+            font-size: 20px;
+            margin-top: -15px;
+        }
+    }
+
+}
