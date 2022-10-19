@@ -24,7 +24,7 @@ const Unknown = () => {
             <div className="unknown__cards">
               {colorData.map((color) => {
                 return (
-                  <div className="main__card">
+                  <div className="main__card" key={color.id}>
                     <div className="main__img">
                       <div
                         className="main--circle"

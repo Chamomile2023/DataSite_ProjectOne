@@ -29,6 +29,16 @@ const App = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const [colorData, setColorData] = useState([]);
+  const ColorData = async () => {
+    const request = await fetch("https://reqres.in/api/unknown");
+    const response = await request.json();
+    setColorData(response.data);
+  };
+  useEffect(() => {
+    ColorData();
+  }, []);
   return (
     <>
       <Header setShow={setShow} />
@@ -57,7 +67,9 @@ const App = () => {
         />
         <Route
           path="/unknown/:id"
-          element={loading ? <SingleColorCard data={data} /> : <Loading />}
+          element={
+            loading ? <SingleColorCard colorData={colorData} /> : <Loading />
+          }
         />
       </Routes>
     </>

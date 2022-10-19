@@ -40,5 +40,20 @@
             margin-top: -15px;
         }
     }
-
+    &__btn{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    &--title{
+        font-weight: bold;
+        font-size: 30px;
+        margin: 20px 0 0 0;
+    }
+    &__card--img1{
+        width: 300px;
+        height: 250px;
+        border-radius: 8px;
+    }
 }
