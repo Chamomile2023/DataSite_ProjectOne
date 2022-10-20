@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import "./Users.scss";
 
 const Users = ({ data }) => {
-  const [element, setElement] = useState([]);
+  //Bu yerda data orqali 6 ta user keladi App dan. Pastdagi loadData funksiyasida page 2 dagi userlar keladi. UseState dagi all ga page 1 va 2 dagi userslar keladi. Pastdagi Load More button click bo'lganda hamma userlarni chiqarishi kerak edi
   const [all, setAll] = useState([]);
   const loadData = async () => {
     const request = await fetch("https://reqres.in/api/users?page=2");
