@@ -4,42 +4,35 @@ import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
 
 const RealSidebar = () => {
-    return (
-        <>
-            <div className="sidebar">
-                <div className="sidebar__basic">
-                    <div className="sidebar__hero">
-                        <div className="sidebar__left">
-                            <div className="sidebar__category">
-                                <h2 className="sidebar__category--title">Category</h2>
-                                <Button className="sidebar__category--span">X</Button>
-                            </div>
-                            <div className="sidebar__input">
-                                <input
-                                    type="text"
-                                    className="sidebar__input--input"
-                                    placeholder="Search"
-                                />
-                                <i class="fa-solid fa-magnifying-glass sidebar__input--search"></i>
-                            </div>
-                            <div className="sidebar__users">
-                                <Button className="user__btn">
-                                    <NavLink to="/users" className="sidebar__users--user">
-                                        Users
-                                    </NavLink>
-                                </Button>
-                                <Button className="user__btn">
-                                    <NavLink to="/unknown" className="sidebar__users--user">
-                                        Unknown
-                                    </NavLink>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="sidebar">
+        <div className="sidebar__hero">
+          <div className="sidebar__one">
+            <h2 className="sidebar__one--title">Category</h2>
+            <Button>X</Button>
+          </div>
+          <div className="sidebar__two">
+            <input
+              type="text"
+              placeholder="Search"
+              className="sidebar__two--input"
+            />
+            <i className="fa-solid fa-magnifying-glass sidebar__two--icon"></i>
+          </div>
+          <div className="sidebar__three">
+            <NavLink to="/users">
+              <Button className="sidebar__three--btn">Users</Button>
+            </NavLink>
+            <NavLink to="/unknown">
+              {" "}
+              <Button className="sidebar__three--btn">Unknown</Button>
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default RealSidebar;

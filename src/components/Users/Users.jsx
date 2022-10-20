@@ -4,15 +4,15 @@ import Button from "../Button/Button";
 import "./Users.scss";
 
 const Users = ({ data }) => {
-  //Bu yerda data orqali 6 ta user keladi App dan. Pastdagi loadData funksiyasida page 2 dagi userlar keladi. UseState dagi all ga page 1 va 2 dagi userslar keladi. Pastdagi Load More button click bo'lganda hamma userlarni chiqarishi kerak edi
   const [all, setAll] = useState([]);
+
   const loadData = async () => {
     const request = await fetch("https://reqres.in/api/users?page=2");
     const response = await request.json();
     setAll([...data, ...response.data]);
   };
   useEffect(() => {
-    loadData();
+    setAll(data);
   }, []);
   return (
     <>
@@ -45,9 +45,11 @@ const Users = ({ data }) => {
             </div>
           }
           <Button
-
             className="users__load"
-            onChange={() => { setAll(all) }}>
+            onClick={() => {
+              loadData();
+            }}
+          >
             Load More
           </Button>
         </div>
