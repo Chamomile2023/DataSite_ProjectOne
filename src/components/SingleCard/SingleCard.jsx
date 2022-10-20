@@ -24,19 +24,17 @@ const SingleCard = ({ data }) => {
               .filter((item) => item.id == id)
               .map((item) => {
                 return (
-                  <div className="single__card">
+                  <div className="single__card" key={item?.id}>
                     <img
-                      src={item.avatar}
+                      src={item?.avatar}
                       alt=""
                       className="single__card--img"
                     />
                     <h2 className="single__card--title">
-                      {item.first_name + " " + item.last_name}
+                      {item?.first_name + " " + item?.last_name}
                     </h2>
-                    <p className="single__card--email">{item.email}</p>
-                    <Button className="single__card--btn" to={item.email}>
-                      Contact
-                    </Button>
+                    <p className="single__card--email">{item?.email}</p>
+                    <Button className="single__card--btn">Contact</Button>
                   </div>
                 );
               })}

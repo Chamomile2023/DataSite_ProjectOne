@@ -21,7 +21,7 @@ const App = () => {
   const [data, setData] = useState([]);
   const getData = async () => {
     setLoading(false);
-    const request = await fetch(`https://reqres.in/api/users`);
+    const request = await fetch(`https://reqres.in/api/users?page=1`);
     const response = await request.json();
     setData(response.data);
     setLoading(true);

@@ -36,16 +36,16 @@ const Main = ({ data }) => {
                   <div className="main__card" key={item.id}>
                     <div className="main__img">
                       <img
-                        src={item.avatar}
+                        src={item?.avatar}
                         alt="person"
                         className="main__img--img"
                       />
                     </div>
                     <div className="main__name">
-                      {item.first_name + " " + item.last_name}
+                      {item?.first_name + " " + item?.last_name}
                     </div>
                     <div className="main__email">
-                      <p className="main__email--email">{item.email}</p>
+                      <p className="main__email--email">{item?.email}</p>
                     </div>
                     <NavLink to={`/users/${item?.id}`}>
                       <Button className="main__btn">See more</Button>
@@ -68,19 +68,19 @@ const Main = ({ data }) => {
                       <div className="main__img">
                         <div
                           className="main--circle"
-                          style={{ backgroundColor: element.color }}
+                          style={{ backgroundColor: element?.color }}
                         ></div>
                       </div>
-                      <div className="main__name ">Color: {element.color}</div>
+                      <div className="main__name ">Color: {element?.color}</div>
                       <div className="main__email">
                         <p className="main__email--email">
-                          Year: {element.year}
+                          Year: {element?.year}
                         </p>
                         <p className="main__email--email">
-                          Pantone value: {element.pantone_value}
+                          Pantone value: {element?.pantone_value}
                         </p>
                       </div>
-                      <NavLink to={`/unknown/${element.id}`}>
+                      <NavLink to={`/unknown/${element?.id}`}>
                         <Button className="main__btn">See more</Button>
                       </NavLink>
                     </div>

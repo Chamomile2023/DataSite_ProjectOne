@@ -4,13 +4,23 @@ import Button from "../Button/Button";
 import "./Users.scss";
 
 const Users = ({ data }) => {
+  const [element, setElement] = useState([]);
+  const [all, setAll] = useState([]);
+  const loadData = async () => {
+    const request = await fetch("https://reqres.in/api/users?page=2");
+    const response = await request.json();
+    setAll([...data, ...response.data]);
+  };
+  useEffect(() => {
+    loadData();
+  }, []);
   return (
     <>
       <div className="users">
         <div className="container">
           {
             <div className="users__hero">
-              {data.slice(0, 6).map((item) => {
+              {data.map((item) => {
                 return (
                   <div className="main__card" key={item.id} id={item.id}>
                     <div className="main__img">
@@ -35,11 +45,9 @@ const Users = ({ data }) => {
             </div>
           }
           <Button
-            onClick={() => {
-              showMore;
-            }}
+
             className="users__load"
-          >
+            onChange={() => { setAll(all) }}>
             Load More
           </Button>
         </div>
