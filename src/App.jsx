@@ -44,8 +44,8 @@ const App = () => {
   }, []);
   return (
     <>
-      <Header setShow={setShow} show={show} />
       <RealSidebar data={data} show={show} setShow={setShow} />
+      <Header setShow={setShow} show={show} />
       <Routes>
         <Route
           path="/"

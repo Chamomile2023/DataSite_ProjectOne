@@ -12,12 +12,14 @@
         height: 50px;
         border: 1px solid black;
         border-radius: 50%;
+        z-index: 1;
     }
     &__circle{
         position: absolute;
         top: 33%;
         left: 22%;
         text-align: start !important;
+        border-radius: 50%;
         &--span{
             display: block;
             width: 25px;
@@ -108,3 +110,4 @@
         max-width: 330px;
     }
 }
+

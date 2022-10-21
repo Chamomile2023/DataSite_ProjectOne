@@ -1,15 +1,16 @@
 .sidebar{
     position: relative;
+    z-index: 100;
     &__basic{
         width: 100%;
         display: flex;
-        position: absolute;
         transform: translateX(-100%);
         transition: 0.3s ease-in-out;
         }
         &__basic-active{
             width: 100%;
             display: flex;
+            position: fixed;
             transform: translateX(0);
             transition: 0.3s ease-in-out;
             }
@@ -22,13 +23,11 @@
             background-color: rgba(0,0,0,.5);
             z-index: 1;
             font-style: transparent;
-            
         }
         &__hero{
-            position: fixed;
+        position: fixed;
         width: 30%;
         height: 100vh;
-        top:0;
         z-index: 100;
         left: 0;
         background-color: #fff;
