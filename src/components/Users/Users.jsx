@@ -20,7 +20,7 @@ const Users = ({ data }) => {
         <div className="container">
           {
             <div className="users__hero">
-              {data.map((item) => {
+              {all.map((item) => {
                 return (
                   <div className="main__card" key={item.id} id={item.id}>
                     <div className="main__img">

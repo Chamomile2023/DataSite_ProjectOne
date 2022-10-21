@@ -42,6 +42,7 @@
         color: gray;
         font-weight: 400;
         margin-top: 15px;
+        z-index: -1;
     }
     &--circle{
         width: 80px;
@@ -59,5 +60,6 @@
 .user__all{
     width: 100%;
     margin-top: 25px;
+    z-index: -1;
 }
 

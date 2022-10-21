@@ -29,16 +29,11 @@ const Header = ({ setShow }) => {
                   </NavLink>
                 </div>
                 <div className="header__buttons">
-                  <button className="header__buttons--register">
-                    <NavLink to="/sign-up" className="NavLink">
-                      Registration
-                    </NavLink>
-                  </button>
-                  <Button className="header__buttons--login">
-                    <NavLink to="/sign-in" className="NavLink1">
-                      Log in
-                    </NavLink>
-                  </Button>
+                  <NavLink to="/profile" className="header__buttons--btn">
+                    <Button className="header__buttons--login">
+                      <i class="fa-regular fa-user"></i>
+                    </Button>
+                  </NavLink>
                 </div>
               </nav>
             </div>

@@ -1,0 +1,47 @@
+.profile{
+    width: 100%;
+    position: relative;
+    &__hero{
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%);
+    }
+    &__card{
+        width: 300px;
+        height: 450px;
+        box-shadow: 0 10px 36px rgb(0 0 0/5%);
+        border-radius: 15px;
+        text-align: center;
+        position: relative;
+    }
+    &__color{
+        width: 300px;
+        height: 250px;
+        background-color: #000;
+        border-radius: 12px 12px 0 0;
+    }
+    &__img{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 70px;
+        right: 100px;
+        border-radius: 50%;
+    }
+    &--title{
+        font-weight: bold;
+        font-size: 30px;
+    }
+    &--job{
+        color: gray;
+        font-weight: bold;
+        font-size: 35px;
+        margin-top: -15px;
+    }
+    &--description{
+        font-size: 20px;
+        color: gray;
+        line-height: 20px;
+    }
+}

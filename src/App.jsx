@@ -11,6 +11,7 @@ import Loading from "./components/Loading/Loading";
 import RealSidebar from "./components/RealSidebar/RealSidebar";
 import SingleCard from "./components/SingleCard/SingleCard";
 import SingleColorCard from "./components/SingleCard/SingleColorCard";
+import Profile from "./components/Profile/Profile";
 const App = () => {
   //Loader
   const [loading, setLoading] = useState(false);
@@ -42,17 +43,17 @@ const App = () => {
   return (
     <>
       <Header setShow={setShow} />
-      {/* <RealSidebar /> */}
+      <RealSidebar data={data} />
       <Routes>
         <Route
           path="/"
           element={loading ? <Main data={data} /> : <Loading />}
         />
-        <Route path="/sign-in" element={loading ? <Login /> : <Loading />} />
+        {/* <Route path="/sign-in" element={loading ? <Login /> : <Loading />} />
         <Route
           path="/sign-up"
           element={loading ? <Registration /> : <Loading />}
-        />
+        /> */}
         <Route
           path="/users"
           element={loading ? <Users data={data} /> : <Loading />}
@@ -71,6 +72,7 @@ const App = () => {
             loading ? <SingleColorCard colorData={colorData} /> : <Loading />
           }
         />
+        <Route path="/profile" element={loading ? <Profile /> : <Loading />} />
       </Routes>
     </>
   );

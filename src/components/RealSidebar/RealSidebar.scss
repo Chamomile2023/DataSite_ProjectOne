@@ -1,14 +1,29 @@
 .sidebar{
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
     position: relative;
-    &__hero{
+    &__basic{
+        width: 100%;
+        display: flex;
+        }
+        &__right{
+            position: fixed;
+            width: 70%;
+            height:100vh;
+            right: 0;
+            top:0;
+            background-color: rgba(0,0,0,.5);
+            z-index: 1;
+            font-style: transparent;
+            
+        }
+        &__hero{
+            position: fixed;
         width: 30%;
-        position: absolute;
-        top: -140px;
-        z-index: 10;
-        background-color: red;
-        padding: 30px;
+        height: 100vh;
+        top:0;
+        z-index: 100;
+        left: 0;
+        background-color: #fff;
+        padding: 30px; 
         }
     &__one{
         display: flex;
@@ -43,6 +58,17 @@
             width: 100%;
             border: none;
             text-align: start;
+            font-size: 20px;
         }
     }
+}
+.active{
+    background-color: #000;
+    border-radius: 15px;
+    color: #fff;
+}
+.inactive{
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
 }

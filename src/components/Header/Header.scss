@@ -66,6 +66,18 @@
                 transition: 0.3s;
             }
         }
+        &--btn{
+            color: #000;
+            font-size: 20px;
+            border-radius: 50%;
+            border: 2px solid none;
+            &:hover{
+                color: #fff;
+            }
+            &--login{
+                border-radius: 50%;
+            }
+        }
     }
 }
 .hide{
@@ -96,16 +108,4 @@
     .container{
         max-width: 330px;
     }
-}
-.NavLink{
-    color: #fff;
-}
-.NavLink1{
-    color: #000;
-}
-.NavLink:hover{
-    color: #000;
-}
-.NavLink1:hover{
-    color: #fff;
 }
