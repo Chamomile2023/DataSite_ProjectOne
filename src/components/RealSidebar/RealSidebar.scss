@@ -3,7 +3,16 @@
     &__basic{
         width: 100%;
         display: flex;
+        position: absolute;
+        transform: translateX(-100%);
+        transition: 0.3s ease-in-out;
         }
+        &__basic-active{
+            width: 100%;
+            display: flex;
+            transform: translateX(0);
+            transition: 0.3s ease-in-out;
+            }
         &__right{
             position: fixed;
             width: 70%;
@@ -59,16 +68,15 @@
             border: none;
             text-align: start;
             font-size: 20px;
+            color: #000;
         }
     }
 }
 .active{
+    color: #fff;
     background-color: #000;
     border-radius: 15px;
-    color: #fff;
 }
-.inactive{
-    background-color: #fff;
-    color: #000;
-    border-radius: 15px;
+.close{
+    transform: translateX(0);
 }

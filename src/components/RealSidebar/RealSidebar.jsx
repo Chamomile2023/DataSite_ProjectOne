@@ -3,17 +3,17 @@ import "./RealSidebar.scss";
 import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
 
-const RealSidebar = ({ data }) => {
+const RealSidebar = ({ data, show, setShow }) => {
   //Search
   const [search, setSearch] = useState();
   return (
     <>
       <div className="sidebar">
-        <div className="sidebar__basic">
+        <div className={show ? "sidebar__basic-active" : "sidebar__basic"}>
           <div className="sidebar__hero">
             <div className="sidebar__one">
               <h2 className="sidebar__one--title">Category</h2>
-              <Button>X</Button>
+              <Button onClick={() => setShow(!show)}>X</Button>
             </div>
             <div className="sidebar__two">
               <input
@@ -28,13 +28,13 @@ const RealSidebar = ({ data }) => {
             <div className="sidebar__three">
               <NavLink
                 to="/users"
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
+                className={`nav $({ isActive }) => (isActive ? "active" : "")`}
               >
                 <Button className="sidebar__three--btn">Users</Button>
               </NavLink>
               <NavLink
                 to="/unknown"
-                className={({ isActive }) => (isActive ? "active" : "inactive")}
+                className={`nav $({ isActive }) => (isActive ? "active" : "")`}
               >
                 <Button className="sidebar__three--btn">Unknown</Button>
               </NavLink>

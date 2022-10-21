@@ -17,7 +17,9 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   //Sidebar
   const [show, setShow] = useState(false);
-  const [close, setClose] = useState(false);
+  const toggle = () => {
+    return setShow((e) => !e);
+  };
   //fetch
   const [data, setData] = useState([]);
   const getData = async () => {
@@ -42,8 +44,8 @@ const App = () => {
   }, []);
   return (
     <>
-      <Header setShow={setShow} />
-      <RealSidebar data={data} />
+      <Header setShow={setShow} show={show} />
+      <RealSidebar data={data} show={show} setShow={setShow} />
       <Routes>
         <Route
           path="/"
